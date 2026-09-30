@@ -23,6 +23,11 @@ python3 -m http.server 8080
 
 The production deployment is a static Nginx service. See `deploy/nginx.conf`.
 
+
+### Production updates
+
+The production homepage container polls main about once per minute and switches validated releases atomically. No GitHub-side server credentials are required because this repository is public.
+
 ## License
 
 MIT
