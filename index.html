@@ -7,9 +7,9 @@
   <meta name="theme-color" content="#0b0d10" id="theme-color">
   <title>FWERKOR — Software, Research, Infrastructure</title>
   <link rel="icon" type="image/png" href="/assets/fwerkor-logo.png">
-  <script src="/theme-init.js?v=1.0.4"></script>
-  <link rel="stylesheet" href="/styles.css?v=1.0.4">
-  <script src="/main.js?v=1.0.4" defer></script>
+  <script src="/theme-init.js?v=1.0.5"></script>
+  <link rel="stylesheet" href="/styles.css?v=1.0.5">
+  <script src="/main.js?v=1.0.5" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">跳到正文</a>
@@ -44,9 +44,36 @@
     <section class="build shell" id="build">
       <div class="section-heading reveal"><p class="section-index">01 / WHAT WE BUILD</p><h2>工作方向</h2></div>
       <div class="build-list">
-        <article class="build-card reveal" data-accent="blue"><span class="build-number">01</span><div><p class="build-kicker">SOFTWARE</p><h3>可运行的软件</h3><p>身份、协作、开发工具和面向真实使用场景的应用。</p></div></article>
-        <article class="build-card reveal" data-accent="green"><span class="build-number">02</span><div><p class="build-kicker">RESEARCH</p><h3>可复现的研究</h3><p>系统、机器学习基础设施与模型运行时方向的实验和原型。</p></div></article>
-        <article class="build-card reveal" data-accent="violet"><span class="build-number">03</span><div><p class="build-kicker">INFRASTRUCTURE</p><h3>自己维护的基础设施</h3><p>服务、存储、身份、网络和公开资源均运行在可控环境中。</p></div></article>
+        <article class="build-card reveal" data-accent="blue">
+          <span class="build-number">01</span>
+          <div class="build-copy"><p class="build-kicker">SOFTWARE</p><h3>可运行的软件</h3><p>身份、协作、开发工具和面向真实使用场景的应用。</p></div>
+          <div class="build-motif motif-software" aria-hidden="true">
+            <i class="window window-a"></i><i class="window window-b"></i><i class="window window-c"></i>
+          </div>
+        </article>
+        <article class="build-card reveal" data-accent="green">
+          <span class="build-number">02</span>
+          <div class="build-copy"><p class="build-kicker">RESEARCH</p><h3>可复现的研究</h3><p>系统、机器学习基础设施与模型运行时方向的实验和原型。</p></div>
+          <div class="build-motif motif-research" aria-hidden="true">
+            <svg viewBox="0 0 320 220" focusable="false">
+              <path d="M8 166 C44 166 52 96 88 96 S132 178 170 178 S218 54 258 54 S286 112 314 112"/>
+              <path class="ghost" d="M8 136 C42 136 54 120 83 120 S127 149 158 149 S207 92 241 92 S278 130 314 130"/>
+              <circle cx="88" cy="96" r="5"/><circle cx="170" cy="178" r="5"/><circle cx="258" cy="54" r="5"/>
+            </svg>
+          </div>
+        </article>
+        <article class="build-card reveal" data-accent="violet">
+          <span class="build-number">03</span>
+          <div class="build-copy"><p class="build-kicker">INFRASTRUCTURE</p><h3>自己维护的基础设施</h3><p>服务、存储、身份、网络和公开资源均运行在可控环境中。</p></div>
+          <div class="build-motif motif-infra" aria-hidden="true">
+            <svg viewBox="0 0 320 220" focusable="false">
+              <path d="M50 52 L160 34 L270 76 L238 172 L116 188 L50 52"/>
+              <path class="ghost" d="M160 34 L116 188 M50 52 L238 172 M270 76 L116 188"/>
+              <circle cx="50" cy="52" r="8"/><circle cx="160" cy="34" r="8"/><circle cx="270" cy="76" r="8"/><circle cx="238" cy="172" r="8"/><circle cx="116" cy="188" r="8"/>
+              <circle class="core" cx="160" cy="112" r="18"/>
+            </svg>
+          </div>
+        </article>
       </div>
     </section>
     <section class="transition-band" aria-hidden="true"><div class="transition-word">FWERKOR</div></section>
@@ -54,9 +81,23 @@
       <div class="systems-head reveal"><div><p class="section-index">02 / SYSTEMS</p><h2>当前入口</h2></div></div>
       <div class="bento">
         <a class="system-card system-card-featured reveal" href="https://blog.fwerkor.com/"><div class="system-top"><span class="system-type">BLOG</span><span class="system-arrow">↗</span></div><div><h3>Blog</h3><p>技术记录、实验笔记与发布更新。</p></div></a>
-        <a class="system-card reveal" href="https://proj.fwerkor.com/"><div class="system-top"><span class="system-type">PROJECTS</span><span class="system-arrow">↗</span></div><div><h3>Projects</h3><p>研究项目和工程项目入口。</p></div></a>
+        <a class="system-card system-card-projects reveal" href="https://proj.fwerkor.com/">
+          <div class="system-top"><span class="system-type">PROJECTS</span><span class="system-arrow">↗</span></div>
+          <div class="system-copy"><h3>Projects</h3><p>研究项目和工程项目入口。</p></div>
+          <div class="projects-motif" aria-hidden="true">
+            <i class="project-node node-a"></i><i class="project-node node-b"></i><i class="project-node node-c"></i>
+            <i class="project-link link-a"></i><i class="project-link link-b"></i>
+          </div>
+        </a>
         <a class="system-card system-card-wide reveal" href="https://cloud.fwerkor.com/"><div class="system-top"><span class="system-type">CLOUD</span><span class="system-arrow">↗</span></div><div><h3>Cloud</h3><p>自托管文件、协作与在线办公。</p></div><div class="cloud-lines" aria-hidden="true"><i></i><i></i><i></i><i></i></div></a>
-        <a class="system-card reveal" href="https://github.com/fwerkor" target="_blank" rel="noreferrer"><div class="system-top"><span class="system-type">OPEN SOURCE</span><span class="system-arrow">↗</span></div><div><h3>GitHub</h3><p>公开源码、issue 和协作记录。</p></div></a>
+        <a class="system-card system-card-github reveal" href="https://github.com/fwerkor" target="_blank" rel="noreferrer">
+          <div class="system-top"><span class="system-type">OPEN SOURCE</span><span class="system-arrow">↗</span></div>
+          <div class="system-copy"><h3>GitHub</h3><p>公开源码、issue 和协作记录。</p></div>
+          <div class="git-motif" aria-hidden="true">
+            <i class="git-trunk"></i><i class="git-branch"></i>
+            <i class="git-dot dot-a"></i><i class="git-dot dot-b"></i><i class="git-dot dot-c"></i><i class="git-dot dot-d"></i>
+          </div>
+        </a>
       </div>
     </section>
     <section class="services" id="services"><div class="shell services-inner">

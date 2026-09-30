@@ -13,3 +13,193 @@ html[data-theme=dark]{color-scheme:dark;--bg:#0b0d10;--surface:rgba(21,25,30,.82
 @media(max-width:920px){.site-header{grid-template-columns:1fr auto}.top-nav{display:none}.shell{width:min(100% - 32px,1240px)}.hero-title{font-size:clamp(72px,18vw,150px)}.hero-word-b{margin-left:0}.hero-bottom{width:min(620px,82vw)}.build{grid-template-columns:1fr;gap:44px;padding-top:90px}.section-heading{position:static}.build-card{min-height:420px}.systems-head{grid-template-columns:1fr;gap:20px}.system-card,.system-card-featured,.system-card-wide{grid-column:span 6}.system-card-featured{min-height:360px}}
 @media(max-width:640px){.site-header{top:8px;width:calc(100% - 16px);min-height:56px;padding:6px 7px 6px 10px;border-radius:13px}.brand img{width:34px;height:34px}.brand span{display:none}.header-account{min-height:38px;padding-inline:11px}.theme-toggle{min-height:38px}.shell{width:calc(100% - 28px)}.hero{height:172svh;min-height:980px}.hero-sticky{min-height:620px}.hero-content{padding-top:56px}.eyebrow{max-width:260px;line-height:1.7;margin-bottom:16px}.hero-title{font-size:clamp(60px,19.5vw,112px);line-height:.84;letter-spacing:-.075em}.hero-word-b{margin-left:0}.hero-bottom{width:100%;margin-top:46px}.hero-copy{font-size:18px;max-width:340px}.scroll-cue{display:none}.orbit-a{width:125vw;height:60vw}.orbit-b{width:105vw;height:105vw}.grid-plane{width:220vw}.build{padding:80px 0 100px}.section-heading h2,.systems-head h2,.services-title h2{font-size:clamp(42px,14vw,68px)}.build-card{min-height:390px;grid-template-columns:1fr;align-content:space-between;padding:26px}.build-card.is-active{transform:none}.build-card h3{font-size:34px}.transition-band{height:28vh;min-height:220px}.transition-word{font-size:44vw}.systems{padding:96px 0}.systems-head{margin-bottom:34px}.bento{grid-template-columns:1fr}.system-card,.system-card-featured,.system-card-wide{grid-column:1;min-height:270px}.system-card-featured{min-height:350px}.system-mark{width:130px;height:130px;right:20px;bottom:18px}.services-inner{padding:90px 0 110px}.service-link{grid-template-columns:1fr auto;gap:8px 16px;padding-block:14px}.service-link small{grid-column:1}.service-link b{grid-column:2;grid-row:1/span 2}.closing{min-height:72vh}.closing h2{font-size:clamp(58px,17vw,92px)}.closing-links{flex-wrap:wrap;gap:16px 24px}.footer-inner{min-height:120px;align-items:flex-start;flex-direction:column;justify-content:center}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition-duration:.01ms!important}.hero-title,.hero-bottom,.grid-plane,.halo,.orbit,.beam,.transition-word{transform:none!important}.hero-title{opacity:1!important}.has-js .reveal{opacity:1;transform:none}}
+
+/* Semantic card motifs */
+.build-card > .build-number,
+.build-card > .build-copy,
+.system-card > .system-top,
+.system-card > .system-copy {
+  position: relative;
+  z-index: 3;
+}
+
+.build-motif {
+  position: absolute;
+  z-index: 1;
+  right: clamp(18px, 4vw, 54px);
+  top: 34%;
+  width: min(40%, 300px);
+  aspect-ratio: 1.4;
+  transform: translateY(-50%);
+  color: var(--card-accent);
+  opacity: .52;
+  pointer-events: none;
+  transition: opacity .45s ease, transform .55s cubic-bezier(.2,.7,.2,1);
+}
+
+.build-card.is-active .build-motif {
+  opacity: .78;
+  transform: translateY(-50%) scale(1.035);
+}
+
+.motif-software .window {
+  position: absolute;
+  width: 72%;
+  height: 58%;
+  border: 1px solid color-mix(in srgb, currentColor 52%, transparent);
+  border-radius: 10px;
+  background:
+    linear-gradient(to bottom, color-mix(in srgb, currentColor 7%, transparent), transparent 22%),
+    linear-gradient(90deg, color-mix(in srgb, currentColor 10%, transparent) 1px, transparent 1px),
+    linear-gradient(color-mix(in srgb, currentColor 10%, transparent) 1px, transparent 1px);
+  background-size: auto, 24px 24px, 24px 24px;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--surface-solid) 14%, transparent);
+}
+.motif-software .window::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 10px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 11px 0 0 color-mix(in srgb,currentColor 70%,transparent), 22px 0 0 color-mix(in srgb,currentColor 45%,transparent);
+}
+.motif-software .window-a { right: 2%; top: 6%; transform: rotate(4deg); }
+.motif-software .window-b { right: 15%; top: 23%; transform: rotate(-3deg); opacity: .72; }
+.motif-software .window-c { right: 30%; top: 41%; transform: rotate(2deg); opacity: .42; }
+
+.motif-research svg,
+.motif-infra svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.motif-research path,
+.motif-infra path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+.motif-research .ghost,
+.motif-infra .ghost {
+  opacity: .34;
+  stroke-dasharray: 5 7;
+}
+.motif-research circle,
+.motif-infra circle {
+  fill: var(--surface-solid);
+  stroke: currentColor;
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+.motif-research circle { filter: drop-shadow(0 0 8px color-mix(in srgb,currentColor 45%,transparent)); }
+.motif-infra .core {
+  fill: color-mix(in srgb,currentColor 15%,var(--surface-solid));
+  stroke-width: 2;
+}
+
+.projects-motif,
+.git-motif {
+  position: absolute;
+  z-index: 1;
+  right: 22px;
+  bottom: 20px;
+  width: 138px;
+  height: 116px;
+  color: var(--blue);
+  opacity: .5;
+  pointer-events: none;
+  transition: transform .32s ease, opacity .32s ease;
+}
+.system-card-projects:hover .projects-motif,
+.system-card-github:hover .git-motif {
+  opacity: .78;
+  transform: translateY(-3px);
+}
+
+.projects-motif .project-node {
+  position: absolute;
+  width: 48px;
+  height: 34px;
+  border: 1px solid color-mix(in srgb,currentColor 55%,transparent);
+  border-radius: 7px;
+  background:
+    linear-gradient(90deg, color-mix(in srgb,currentColor 11%,transparent) 1px, transparent 1px),
+    var(--surface-solid);
+  background-size: 10px 100%;
+}
+.projects-motif .node-a { left: 2px; top: 8px; }
+.projects-motif .node-b { right: 2px; top: 39px; }
+.projects-motif .node-c { left: 12px; bottom: 3px; }
+.projects-motif .project-link {
+  position: absolute;
+  height: 1px;
+  transform-origin: left center;
+  background: color-mix(in srgb,currentColor 54%,transparent);
+}
+.projects-motif .link-a { width: 64px; left: 42px; top: 34px; transform: rotate(19deg); }
+.projects-motif .link-b { width: 58px; left: 48px; top: 83px; transform: rotate(-23deg); }
+
+.git-motif .git-trunk,
+.git-motif .git-branch {
+  position: absolute;
+  width: 1px;
+  background: color-mix(in srgb,currentColor 58%,transparent);
+}
+.git-motif .git-trunk { left: 39px; top: 8px; height: 99px; }
+.git-motif .git-branch {
+  left: 63px;
+  top: 24px;
+  height: 66px;
+  transform: rotate(34deg);
+  transform-origin: top;
+}
+.git-motif .git-dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  background: var(--surface-solid);
+  box-shadow: 0 0 0 4px color-mix(in srgb,currentColor 8%,transparent);
+}
+.git-motif .dot-a { left: 39px; top: 16px; }
+.git-motif .dot-b { left: 39px; top: 55px; }
+.git-motif .dot-c { left: 39px; top: 97px; }
+.git-motif .dot-d { left: 101px; top: 77px; }
+
+@media (max-width: 920px) {
+  .build-motif {
+    width: min(38%, 280px);
+    right: 28px;
+    top: 34%;
+  }
+}
+
+@media (max-width: 640px) {
+  .build-motif {
+    width: 52%;
+    right: 14px;
+    top: 31%;
+    opacity: .36;
+  }
+  .build-card.is-active .build-motif { opacity: .53; }
+
+  .projects-motif,
+  .git-motif {
+    width: 116px;
+    height: 98px;
+    right: 14px;
+    bottom: 14px;
+    opacity: .38;
+  }
+
+  .system-card-projects .system-copy,
+  .system-card-github .system-copy {
+    max-width: calc(100% - 92px);
+  }
+}
